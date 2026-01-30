@@ -1,0 +1,16 @@
+
+[Unit]
+Description=socket for Comento Example #소켓 설명 
+
+
+[Service]
+Type=forking #소켓이 포킹 방식으로 실행됨. 프로세스가 포크 후 자식 프로세스가 소켓 처리 후 부모 종료
+ExecStart=/usr/bin/comento-daemon #소켓 연결되면 /usr/bin/comento-daemon 실행
+StandardOutput=journal #출력이 systemd 저널로 리다리엑션되어 로그를 중앙에서 관리
+Restart=on-failure #소켓 실패시 재시작
+StartLimitIntervalSec=1s #1초 내에 시작 시도 횟수 제한
+StartLimitBurst=32 #1초 내 최대 32번 시작 시도 가능
+
+
+[Install]
+WantedBy=sockets.target #소켓이 sockets.target에 종속되어 있음.

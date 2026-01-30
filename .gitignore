@@ -1,0 +1,15 @@
+# toolchains
+gcc-arm-*/
+
+# kernel / buildroot
+linux/
+buildroot/
+
+# compressed archives
+*.tar.gz
+*.tar.xz
+
+# generated
+cscope.out
+*.o
+*.a

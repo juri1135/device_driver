@@ -1,0 +1,10 @@
+
+[Unit]
+Description=socket for Comento Example #소켓 설명
+service
+
+[Socket]
+ListenStream=/run/comento.socket #소켓이 /run/comento.socket에서 수신 대기
+
+[Install]
+WantedBy=sockets.target
